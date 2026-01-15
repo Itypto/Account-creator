@@ -27,7 +27,7 @@ async function getDiscordUser() {
         return await ask("Enter Discord ID: ");
     }
 
-    console.log("⏳ Connecting to Discord...");
+    console.log("Connecting to Discord...");
     try {
         await client.login(config.botToken);
         const guild = await client.guilds.fetch(config.guildId);
@@ -70,7 +70,7 @@ async function getDiscordUser() {
         const username = await ask("Username: ");
         const password = await ask("Password: ");
 
-        console.log("\n⏳ Creating account...\n");
+        console.log("\n Creating account...\n");
 
         const resp = await functions.registerUser(targetId, username, email, password);
 
@@ -88,4 +88,5 @@ async function getDiscordUser() {
         if (client.token) client.destroy();
         process.exit();
     }
+
 })();
