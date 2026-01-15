@@ -3,7 +3,7 @@ Account Creator for Private Backends
 A command-line tool designed to manage account creation for private backends. This tool is compatible with projects such as Reload or Lawin V2. It features a direct connection to MongoDB and optional Discord integration for simplified user identification.
 
 ## Features
-Compatibility: Designed for use with Lawin V2, Reload, and similar private backend structures.
+Compatibility: Designed for use with Lawin V2, Reload, and similar private backends
 
 Discord Integration: Fetch and search for server members directly through a Discord Bot.
 
