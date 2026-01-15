@@ -3,7 +3,7 @@ const Profile = require("../model/profiles.js");
 const profileManager = require("./profile.js");
 const Friends = require("../model/friends.js");
 const uuid = require("uuid");
-
+const bcrypt = require("bcrypt");
 function MakeID() {
     return uuid.v4();
 }
@@ -26,6 +26,9 @@ async function registerUser(targetId, username, email, password) {
     }
 
     try {
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
         const newUser = await User.create({ 
             created: new Date().toISOString(), 
             discordId: targetId, 
@@ -34,7 +37,7 @@ async function registerUser(targetId, username, email, password) {
             username, 
             username_lower: username.toLowerCase(), 
             email, 
-            password: password 
+            password: hashedPassword
         });
 
         await Profile.create({ 
