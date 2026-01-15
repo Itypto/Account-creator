@@ -1,0 +1,9 @@
+{
+  "useDiscord": true,
+  "log": false,
+  "botToken": "YOUR_BOT_TOKEN",
+  "guildId": "YOUR_SERVER_ID",
+  "mongodb": {
+    "database": "mongodb://127.0.0.1/Backend"
+  }
+}
